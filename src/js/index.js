@@ -1,10 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
-class App extends React.Component {
-    render(){
-        return(
-            <h1>Hello World</h1>
-        )
-    }
-}
-render(<App/>, document.getElementById('app'));
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter as Router, Route } from 'react-router-dom';
+
+import Layout from "./pages/layout";
+
+const app = document.getElementById('app');
+
+ReactDOM.render(
+  <Router>
+    <Route exact path="/" component={Layout} />
+  </Router>,
+app);
