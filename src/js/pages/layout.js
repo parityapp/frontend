@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 // import component here
 import Sidebar from '../components/sidebar/sidebar'
+import Activity from '../components/activity/activity'
 
 export default class Layout extends React.Component {
 
@@ -10,6 +11,7 @@ export default class Layout extends React.Component {
         return (
             <div id="main-app">
                 <Sidebar/>
+                <Activity/>
             </div>
         );
     }
