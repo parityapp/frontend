@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router';
 
 // import component here
+import Summary from '../components/summary/summary'
 import Sidebar from '../components/sidebar/sidebar'
 import Activity from '../components/activity/activity'
 import ActiveUser from '../components/activeUser/activeUser'
