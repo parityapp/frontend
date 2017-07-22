@@ -32,7 +32,7 @@ export default class Summary extends React.Component{
             <div className="summary">
                 <div className="container app-container">
                     <h2>Summary</h2>
-                    <h3>{this.state.summary.summary}</h3>
+                    <p>{this.state.summary.summary}</p>
                 </div>
             </div>
         )
