@@ -8,6 +8,43 @@ body{
 }
 
 .container{
-    max-width: 80%;
+    max-width: 85%;
     margin: 0 auto;
+}
+
+.sidebar{
+    width: 15%;
+    float: left;
+    background: #414141;
+    color: #fff;
+    height: 100vh;
+    padding-top: 40px;
+}
+
+.sidebar ul li{
+    text-decoration: none;
+    color: #3498db;
+    margin-top: 15px;
+}
+
+.sidebar ul li:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+#logo-img{
+    width: 80px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    display: inline-block;
+}
+
+#right-app{
+    width: 80%;
+    float: left;
 }

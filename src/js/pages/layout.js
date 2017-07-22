@@ -14,9 +14,10 @@ export default class Layout extends React.Component {
         return (
             <div id="main-app">
                 <Sidebar/>
-                <Activity/>
-                <ActiveUser/>
-                <Chats/>
+                <div id="right-app">
+                    <Activity/>
+                    <ActiveUser/>
+                </div>
             </div>
         );
     }
