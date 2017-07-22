@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 // import component here
 import Sidebar from '../components/sidebar/sidebar';
 import Chats from '../components/chatbox/chats';
+import Activity from '../components/activity/activity';
 
 export default class Layout extends React.Component {
 	
@@ -13,6 +14,7 @@ export default class Layout extends React.Component {
             <div id="main-app">
                 <Sidebar/>
                 <Chats/>
+                <Activity/>
             </div>
         );
     }
