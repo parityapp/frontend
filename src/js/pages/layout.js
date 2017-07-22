@@ -17,7 +17,9 @@ export default class Layout extends React.Component {
                 <div id="right-app">
                     <Activity/>
                     <ActiveUser/>
+                    <Chats/>
                 </div>
+                <div className="clear"></div>
             </div>
         );
     }

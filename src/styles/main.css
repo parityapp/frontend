@@ -10,6 +10,12 @@ body{
 .container{
     max-width: 85%;
     margin: 0 auto;
+    border: '#e1e8ed solid 1px';
+    padding: '10px';
+    border-radius: '5px';
+    background: "#fbfbfb";
+    padding: '20px';
+    margin-top: "50px";
 }
 
 .sidebar{
@@ -19,6 +25,10 @@ body{
     color: #fff;
     height: 100vh;
     padding-top: 40px;
+}
+
+.clear{
+    clear: both;
 }
 
 .sidebar ul li{
@@ -47,4 +57,11 @@ body{
 #right-app{
     width: 80%;
     float: left;
+}
+
+/*chat*/
+
+.chatbox{
+    background: #3498db;
+    color: #fff;
 }

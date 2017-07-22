@@ -21,18 +21,10 @@ export default class Activity extends React.Component{
     }
 
     render(){
-        // styles
-        const style = {
-            border: '#e1e8ed solid 1px',
-            padding: '10px',
-            borderRadius: '5px',
-            background: "#fbfbfb",
-            padding: '20px'
-        };
 
         return(
             <div className="activity">
-                <div style={style} className="container">
+                <div className="container">
                     <h2>Channel activity</h2>
                     <AreaChart width={1000} height={400} data={this.state.data}
                         margin={{top: 10, right: 30, left: 0, bottom: 0}}>
