@@ -1,6 +1,7 @@
 // imports
 import React from 'react';
 import { YAxis, XAxis, CartesianGrid, AreaChart, Tooltip, Area } from 'recharts';
+import ActivityStore from "../../stores/activity"
 
 // nav component
 export default class Activity extends React.Component{
@@ -8,20 +9,21 @@ export default class Activity extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data: [
-                {name: '09:00', uv: 4000},
-                {name: '09:30', uv: 3000},
-                {name: '10:00', uv: 2000},
-                {name: '10:30', uv: 2780},
-                {name: '11:00', uv: 1890},
-                {name: '11:30', uv: 2390},
-                {name: '12:00', uv: 9000},
-            ]
-        }
+            data: ActivityStore.getAll()
+        };
+    }
+
+    componentWillMount(){
+        ActivityStore.on('change', () =>{
+            console.log("yo");
+            this.setState({
+                data: ActivityStore.getAll()
+            });
+        })
     }
 
     render(){
-
+        console.log(this.state.data);
         return(
             <div className="activity">
                 <div className="container app-container">

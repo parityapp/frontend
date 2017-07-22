@@ -1,28 +1,24 @@
 import React from 'react';
 
+import ChatsStore from "../../stores/chats"
+
 export default class Chats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        messages :[
-            {
-                text: "this is a message"
-            },
-            {
-                text: "this is a message also"
-            },
-            {
-                text: "this is a message also"
-            },
-            {
-                text: "this is a message also"
-            },
-            {
-                text: "this is a message also"
-            }
-        ]
-    }
+        messages : ChatsStore.getAll()
+    };
   }
+
+  componentWillMount(){
+      ChatsStore.on('change', () =>{
+          console.log("chats change");
+          this.setState({
+              messages: ChatsStore.getAll()
+          });
+      })
+  }
+
   render() {
 
     return (

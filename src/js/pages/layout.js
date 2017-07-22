@@ -7,6 +7,8 @@ import Activity from '../components/activity/activity'
 import ActiveUser from '../components/activeUser/activeUser'
 import Chats from '../components/chats/chats'
 
+import ActivityStore from "../../stores/activity"
+
 
 export default class Layout extends React.Component {
 
