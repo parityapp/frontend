@@ -26,7 +26,7 @@ body{
     float: left;
     background: #414141;
     color: #fff;
-    height: 100vh;
+    height: 130vh;
     padding-top: 40px;
 }
 
@@ -63,6 +63,10 @@ body{
 }
 
 /*chat*/
+
+.chatbox{
+    margin-top: 20px;
+}
 
 .chatbox:nth-child(odd){
     background: #3498db;
