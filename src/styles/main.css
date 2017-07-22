@@ -4,4 +4,10 @@ body{
     width: 100%;
     background: #fefefe;
     clear: both;
+    color: #333;
+}
+
+.container{
+    max-width: 80%;
+    margin: 0 auto;
 }
