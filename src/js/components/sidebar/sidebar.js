@@ -2,6 +2,8 @@
 import React from 'react';
 
 import ActivityStore from "../../stores/activity"
+import UserStore from "../../stores/user"
+import ChatsStore from "../../stores/chats"
 
 // nav component
 export default class Sidebar extends React.Component{
@@ -19,6 +21,8 @@ export default class Sidebar extends React.Component{
     onClick(event) {
       console.log("a clicked");
       ActivityStore.getActivityFromApi();
+      UserStore.getUser();
+      ChatsStore.getMessages();
    }
 
     render(){
