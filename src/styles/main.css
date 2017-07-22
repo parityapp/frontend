@@ -7,6 +7,10 @@ body{
     color: #333;
 }
 
+h1,h2,h3,h4{
+    color: #414141;
+}
+
 .container{
     max-width: 85%;
     margin: 0 auto;
@@ -26,7 +30,7 @@ body{
     float: left;
     background: #414141;
     color: #fff;
-    height: 130vh;
+    height: 200vh;
     padding-top: 40px;
 }
 
