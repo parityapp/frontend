@@ -15,7 +15,6 @@ export default class Activity extends React.Component{
 
     componentWillMount(){
         ActivityStore.on('change', () =>{
-            console.log("yo");
             this.setState({
                 data: ActivityStore.getAll()
             });
@@ -24,6 +23,7 @@ export default class Activity extends React.Component{
 
     render(){
         console.log(this.state.data);
+        console.log("yo");
         return(
             <div className="activity">
                 <div className="container app-container">

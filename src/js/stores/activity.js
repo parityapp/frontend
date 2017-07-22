@@ -20,13 +20,15 @@ getAll(){
 }
 
 getActivityFromApi(){
-    this.activity.push(
-        {name: '09:00', uv: 1234},
-        {name: '09:00', uv: 2345},
-        {name: '09:00', uv: 3454},
-        {name: '09:00', uv: 2344},
-        {name: '09:00', uv: 2344},
-    );
+    this.activity = [
+        {name: '09:00', uv: 1231},
+        {name: '09:30', uv: 2342},
+        {name: '10:00', uv: 4563},
+        {name: '10:30', uv: 3456},
+        {name: '11:00', uv: 4564},
+        {name: '11:30', uv: 4643},
+        {name: '12:00', uv: 4565},
+    ]
 
     this.emit("change");
 }
