@@ -1,6 +1,8 @@
 // imports
 import React from 'react';
 
+import ActivityStore from "../../stores/activity"
+
 // nav component
 export default class Sidebar extends React.Component{
     constructor(props){
@@ -14,6 +16,11 @@ export default class Sidebar extends React.Component{
         }
     }
 
+    onClick(event) {
+      console.log("a clicked");
+      ActivityStore.getActivityFromApi();
+   }
+
     render(){
         return(
             <div className="sidebar">
@@ -24,9 +31,9 @@ export default class Sidebar extends React.Component{
                     <ul>
                     {this.state.channels.map(function(channel, index){
                     return <li key={channel}>
-                            <a>{channel}</a>
+                            <a onClick={this.onClick}>{channel}</a>
                            </li>
-                    })}
+                    }, this)}
                     </ul>
                 </div>
             </div>
