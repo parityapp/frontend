@@ -14,6 +14,6 @@ getSummary(){
 }
 
 const summaryStore = new SummaryStore;
-window.summary = summaryStore;
+window.summaryStore = summaryStore;
 
 export default summaryStore;
