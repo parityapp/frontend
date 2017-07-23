@@ -8,14 +8,14 @@ export default class Summary extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            summary: SummaryStore.getSummary()
+            summary: SummaryStore.getAll()
         }
     }
 
     componentWillMount(){
         SummaryStore.on('change', () =>{
             this.setState({
-                summary: SummaryStore.getSummary()
+                summary: SummaryStore.getAll()
             });
         })
     }

@@ -4,6 +4,8 @@ import React from 'react';
 import ActivityStore from "../../stores/activity"
 import UserStore from "../../stores/user"
 import ChatsStore from "../../stores/chats"
+import SummaryStore from "../../stores/summary"
+import HottopicsStore from "../../stores/hottopics"
 
 // nav component
 export default class Sidebar extends React.Component{
@@ -23,6 +25,8 @@ export default class Sidebar extends React.Component{
       ActivityStore.getActivityFromApi();
       UserStore.getUser();
       ChatsStore.getMessages();
+      SummaryStore.getSummary();
+      HottopicsStore.getHottopics();
    }
 
     render(){

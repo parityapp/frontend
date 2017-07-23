@@ -8,9 +8,15 @@ constructor(){
 }
 
 getSummary(){
-    return this.summary;
+    this.summary = {
+        summary: "a new summary"
+    }
+    this.emit("change");
 }
 
+getAll(){
+    return this.summary;
+}
 }
 
 const summaryStore = new SummaryStore;

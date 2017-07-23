@@ -4,21 +4,37 @@ class HottopicsStore extends EventEmitter{
 
 constructor(){
     super();
-    this.topic =[ 
+    this.topic =[
        {
-   	  text: "Topic 1."
+   	       text: "Topic 1."
        },
        {
-   	  text: "Topic 2."
+   	       text: "Topic 2."
        },
        {
-   	  text: "Topic 3."
+   	       text: "Topic 3."
        }
     ]
 }
 
-getHottopics(){
+getAll(){
     return this.topic;
+}
+
+getHottopics(){
+    this.topic = [
+       {
+   	       text: "new Topic 1."
+       },
+       {
+   	       text: "new Topic 2."
+       },
+       {
+   	       text: "new Topic 3."
+       }
+    ]
+
+    this.emit("change");
 }
 
 }

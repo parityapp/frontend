@@ -8,14 +8,14 @@ export default class Hottopics extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            topic: HottopicsStore.getHottopics()
+            topic: HottopicsStore.getAll()
         }
     }
 
     componentWillMount(){
         HottopicsStore.on('change', () =>{
             this.setState({
-                topic: HottopicsStore.getHottopics()
+                topic: HottopicsStore.getAll()
             });
         })
     }
