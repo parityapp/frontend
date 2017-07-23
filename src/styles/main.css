@@ -12,7 +12,7 @@ h1,h2,h3,h4{
 }
 
 .container{
-    max-width: 60%;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -23,6 +23,7 @@ h1,h2,h3,h4{
     background: #fbfbfb;
     padding: 20px;
     margin-top: 50px;
+    max-width: 60%;
 }
 
 .sidebar{
@@ -76,15 +77,19 @@ h1,h2,h3,h4{
 .chatbox:nth-child(odd){
     background: #3498db;
     color: #fff;
-    padding: 10px 20px;
+    padding: 2px 6px;
     border-radius: 15px;
 }
 
 .chatbox:nth-child(even){
     background: #2871a2;
     color: #fff;
-    padding: 10px 20px;
+    padding: 2px 6px;
     border-radius: 15px;
+}
+
+.chatbox p {
+    margin: 7px;
 }
 
 /*login*/
