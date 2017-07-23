@@ -21,7 +21,7 @@ getSummary(id){
         return response.json()
     }).then(function(body) {
         console.log(body);
-        this.summary = body.data.summary;
+        this.summary.text = body.data.summary;
         this.emit("change");
     }.bind(this));
 }
