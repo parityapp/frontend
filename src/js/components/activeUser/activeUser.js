@@ -12,6 +12,10 @@ export default class ActiveUser extends React.Component{
         }
     }
 
+    componentDidMount(){
+        console.log("mounted");
+    }
+
     componentWillMount(){
         UserStore.on('change', () =>{
             this.setState({

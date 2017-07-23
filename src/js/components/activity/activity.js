@@ -13,6 +13,10 @@ export default class Activity extends React.Component{
         };
     }
 
+    componentDidMount(){
+        ActivityStore.getActivityFromApi('1');
+    }
+
     componentWillMount(){
         ActivityStore.on('change', () =>{
             this.setState({

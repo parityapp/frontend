@@ -20,6 +20,18 @@ getAll(){
 }
 
 getActivityFromApi(id){
+    console.log('getting id');
+    var token = localStorage.getItem('token');
+    fetch("https://a093b88f.ngrok.io/stats/pulse", {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    }).then(function(response) {
+        return response.json()
+    }).then(function(body) {
+        console.log(body);
+    });
+
     console.log(id);
     this.activity = [
         {name: '09:00', uv: 1231},

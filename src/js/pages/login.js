@@ -19,21 +19,26 @@ export default class Login extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
-        fetch('/auth', {
+        console.log(JSON.stringify({
+            username: this.state.username,
+            password: this.state.password,
+        }));
+        fetch('https://a093b88f.ngrok.io/auth', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                firstParam: this.state.username,
-                secondParam: this.state.password,
+                username: this.state.username,
+                password: this.state.password,
             })
         }).then(function(response) {
             return response.json()
         }).then(function(body) {
-            localStorage.setItem('token', body.token);
+            console.log(body.data.token);
+            localStorage.setItem('token', body.data.token);
+            localStorage.setItem('channels', JSON.stringify(body.data.channels));
         });
 
     }
