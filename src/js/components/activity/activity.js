@@ -28,7 +28,7 @@ export default class Activity extends React.Component{
             <div className="activity">
                 <div className="container app-container">
                     <h2>Channell activity</h2>
-                    <AreaChart width={1000} height={400} data={this.state.data}
+                    <AreaChart width={750} height={400} data={this.state.data}
                         margin={{top: 10, right: 30, left: 0, bottom: 0}}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
