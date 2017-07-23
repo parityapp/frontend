@@ -31,7 +31,7 @@ export default class ActiveUser extends React.Component{
         return(
             <div className="activeUser">
                 <div className="container app-container">
-                    <h2>Most active user</h2>
+                    <h2>Most Active User</h2>
                     <img style={imgStyle} src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" />
                     <h3>{this.state.user.name}</h3>
                 </div>

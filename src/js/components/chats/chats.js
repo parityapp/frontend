@@ -24,7 +24,7 @@ export default class Chats extends React.Component {
     return (
         <div className="container app-container">
             <div className="chat">
-                <h1>5 important messages</h1>
+                <h2>Five Most Important Messages</h2>
                 {this.state.messages.map(function(msg, index){
                     return <div key={index} className="chatbox">
                                 <p>{msg.text}</p>
