@@ -12,20 +12,14 @@ export default class Sidebar extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            channels: [
-                {
-                    id: 1,
-                    name: "Channel 1"
-                },
-                {
-                    id: 2,
-                    name: "Channel 2"
-                },{
-                    id: 3,
-                    name: "Channel 3"
-                }
-            ]
+            channels: []
         }
+    }
+
+    componentDidMount(){
+        this.setState({
+            channels: JSON.parse(localStorage.getItem('channels'))
+        })
     }
 
     onClick(event) {
@@ -34,7 +28,7 @@ export default class Sidebar extends React.Component{
       UserStore.getUser(channelid);
       ChatsStore.getMessages(channelid);
       SummaryStore.getSummary(channelid);
-      HottopicsStore.getHottopics(channelid);
+      HottopicsStore.getHottopics(channelid );
    }
 
     render(){
