@@ -128,3 +128,7 @@ h1,h2,h3,h4{
     background: #3498db;
     color: #fff;
 }
+
+.login-form form input[type="submit"]:hover{
+    cursor: pointer;
+}
