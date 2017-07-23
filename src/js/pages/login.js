@@ -37,7 +37,7 @@ export default class Login extends React.Component {
             return response.json()
         }).then(function(body) {
             console.log(body.data.token);
-            localStorage.setItem('token', body.data.token);
+            localStorage.setItem('token', JSON.stringify(body.data.token));
             localStorage.setItem('channels', JSON.stringify(body.data.channels));
         });
 

@@ -28,22 +28,6 @@ getAll(){
 }
 
 getMessages(id){
-    // this.messages = [
-    //     {
-    //         text: "this is a new message"
-    //     },
-    //     {
-    //         text: "this is a new message"
-    //     },
-    //     {
-    //         text: "this is a new message"
-    //     },
-    //     {
-    //         text: "this is a new message"
-    //     },
-    //     {
-    //         text: "this is a new message"
-    //     }];
         console.log("Getting chats");
         fetch("https://a093b88f.ngrok.io/stats/representative_messages/" + id, {
           headers: {

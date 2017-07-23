@@ -12,9 +12,18 @@ constructor(){
 }
 
 getSummary(id){
-    this.summary = {
-        text: "a new summary",
-    }
+    console.log("getting summary");
+    fetch("https://a093b88f.ngrok.io/stats/summary/" + id, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    }).then(function(response) {
+        return response.json()
+    }).then(function(body) {
+        console.log(body);
+        this.summary = body.data.summary;
+        this.emit("change");
+    }.bind(this));
 }
 
 
