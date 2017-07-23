@@ -18,6 +18,21 @@ export default class Login extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
+        fetch('/auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstParam: this.state.username,
+                secondParam: this.state.password,
+            })
+        }).then(function(response) {
+            return response.json()
+        }).then(function(body) {
+            console.log(body);
+        });
     }
 
     handleChangeUsername(event) {
