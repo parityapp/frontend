@@ -12,7 +12,7 @@ getAll(){
 }
 
 getUser(id){
-    this.user = {name: "Pierpaolo"};
+    console.log("getting user");
     fetch("https://a093b88f.ngrok.io/stats/most_active/" + id, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')

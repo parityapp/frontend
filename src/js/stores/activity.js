@@ -5,13 +5,13 @@ class ActivityStore extends EventEmitter{
 constructor(){
     super();
     this.activity = [
-            {name: '09:00', uv: 4000},
-            {name: '09:30', uv: 3000},
-            {name: '10:00', uv: 2000},
-            {name: '10:30', uv: 2780},
-            {name: '11:00', uv: 1890},
-            {name: '11:30', uv: 2390},
-            {name: '12:00', uv: 9000},
+        {time: '09:00', rate: 4000},
+        {time: '09:30', rate: 3000},
+        {time: '10:00', rate: 2000},
+        {time: '10:30', rate: 2780},
+        {time: '11:00', rate: 1890},
+        {time: '11:30', rate: 2390},
+        {time: '12:00', rate: 9000},
     ]
 }
 
@@ -20,17 +20,19 @@ getAll(){
 }
 
 getActivityFromApi(id){
-    this.activity = [
-        {name: '09:00', uv: 1231},
-        {name: '09:30', uv: 2342},
-        {name: '10:00', uv: 4563},
-        {name: '10:30', uv: 3456},
-        {name: '11:00', uv: 4564},
-        {name: '11:30', uv: 4643},
-        {name: '12:00', uv: 4565},
-    ]
-
-    this.emit("change");
+    console.log("getting activity");
+    fetch("https://a093b88f.ngrok.io/stats/pulse/" + id, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    }).then(function(response) {
+        return response.json()
+    }).then(function(body) {
+        console.log("Activity received");
+        console.log(body);
+        this.activity = body.data
+        this.emit("change");
+    }.bind(this));
 }
 
 

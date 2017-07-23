@@ -35,7 +35,7 @@ export default class Activity extends React.Component{
                         <Tooltip/>
                         <Area type='monotone'
                             fillOpacity={1}
-                            dataKey='uv'
+                            dataKey='rate'
                             stroke='#8884d8'
                             fill='#3498db'
                         />
