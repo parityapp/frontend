@@ -13,9 +13,6 @@ export default class Activity extends React.Component{
         };
     }
 
-    componentDidMount(){
-        ActivityStore.getActivityFromApi('1');
-    }
 
     componentWillMount(){
         ActivityStore.on('change', () =>{
@@ -26,8 +23,6 @@ export default class Activity extends React.Component{
     }
 
     render(){
-        console.log(this.state.data);
-        console.log("yo");
         return(
             <div className="activity">
                 <div className="container app-container">

@@ -13,11 +13,12 @@ export default class ActiveUser extends React.Component{
     }
 
     componentDidMount(){
-        console.log("mounted");
+        UserStore.getUser(JSON.parse(localStorage.getItem('channels'))[0].id);
     }
 
     componentWillMount(){
         UserStore.on('change', () =>{
+            console.log('user log');
             this.setState({
                 user: UserStore.getAll()
             });

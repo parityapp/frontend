@@ -28,7 +28,7 @@ export default class Sidebar extends React.Component{
       UserStore.getUser(channelid);
       ChatsStore.getMessages(channelid);
       SummaryStore.getSummary(channelid);
-      HottopicsStore.getHottopics(channelid );
+      HottopicsStore.getHottopics(channelid);
    }
 
     render(){

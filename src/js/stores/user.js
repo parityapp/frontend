@@ -13,10 +13,19 @@ getAll(){
 
 getUser(id){
     this.user = {name: "Pierpaolo"};
-    this.emit("change");
+    fetch("https://a093b88f.ngrok.io/stats/most_active/" + id, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    }).then(function(response) {
+        return response.json()
+    }).then(function(body) {
+        console.log(body);
+        console.log( body.data.length);
+        this.user = {name: body.data[body.data.length-1]};
+        this.emit("change");
+    }.bind(this));
 }
-
-
 }
 
 
