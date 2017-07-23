@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 export default class Login extends React.Component {
 
@@ -7,7 +8,8 @@ export default class Login extends React.Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            redirect: false
         }
 
         this.handleChangeUsername = this.handleChangeUsername.bind(this);
@@ -31,8 +33,9 @@ export default class Login extends React.Component {
         }).then(function(response) {
             return response.json()
         }).then(function(body) {
-            console.log(body);
+            localStorage.setItem('token', body.token);
         });
+
     }
 
     handleChangeUsername(event) {
@@ -48,6 +51,11 @@ export default class Login extends React.Component {
     }
 
     render() {
+
+        const { redirect } = this.state;
+        if (redirect) {
+            return <Redirect to='/'/>;
+        }
         return (
             <div className="login-form">
                 <div className="container">
