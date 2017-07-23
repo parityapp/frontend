@@ -6,19 +6,19 @@ constructor(){
     super();
     this.messages = [
         {
-            text: "this is a message"
+            content: "this is a message",
         },
         {
-            text: "this is a message also"
+            content: "this is a message",
         },
         {
-            text: "this is a message also"
+            content: "this is a message",
         },
         {
-            text: "this is a message also"
+            content: "this is a message",
         },
         {
-            text: "this is a message also"
+            content: "this is a message",
         }
     ]
 }
@@ -28,36 +28,34 @@ getAll(){
 }
 
 getMessages(id){
-    this.messages = [
-        {
-            text: "this is a new message"
-        },
-        {
-            text: "this is a new message"
-        },
-        {
-            text: "this is a new message"
-        },
-        {
-            text: "this is a new message"
-        },
-        {
-            text: "this is a new message"
-        }];
-        // console.log("Getting chats");
-        // fetch("https://a093b88f.ngrok.io/stats/representative_messages/" + id, {
-        //   headers: {
-        //     'Authorization': 'Bearer ' + localStorage.getItem('token')
-        //   }
-        // }).then(function(response) {
-        //     return response.json()
-        // }).then(function(body) {
-        //     console.log(body);
-        //
-        //     this.emit("change");
-        // }.bind(this));
-
-    this.emit("change");
+    // this.messages = [
+    //     {
+    //         text: "this is a new message"
+    //     },
+    //     {
+    //         text: "this is a new message"
+    //     },
+    //     {
+    //         text: "this is a new message"
+    //     },
+    //     {
+    //         text: "this is a new message"
+    //     },
+    //     {
+    //         text: "this is a new message"
+    //     }];
+        console.log("Getting chats");
+        fetch("https://a093b88f.ngrok.io/stats/representative_messages/" + id, {
+          headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          }
+        }).then(function(response) {
+            return response.json()
+        }).then(function(body) {
+            console.log(body);
+            this.messages = body.data;
+            this.emit("change");
+        }.bind(this));
 }
 
 
