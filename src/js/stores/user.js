@@ -11,7 +11,7 @@ getAll(){
     return this.user;
 }
 
-getUser(){
+getUser(id){
     this.user = {name: "Pierpaolo"};
     this.emit("change");
 }

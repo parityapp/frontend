@@ -4,12 +4,16 @@ class SummaryStore extends EventEmitter{
 
 constructor(){
     super();
-    this.summary = {summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."};
+    this.summary = {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        channel: "Town Square"
+    };
 }
 
-getSummary(){
+getSummary(id){
     this.summary = {
-        summary: "a new summary"
+        text: "a new summary",
+        channel: "Town square"
     }
     this.emit("change");
 }

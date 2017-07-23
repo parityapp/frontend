@@ -27,7 +27,7 @@ getAll(){
     return this.messages;
 }
 
-getMessages(){
+getMessages(id){
     this.messages = [
         {
             text: "this is a new message"

@@ -83,6 +83,15 @@ h1,h2,h3,h4{
     border-radius: 15px;
 }
 
+.channel-name{
+    background: #3498db;
+    padding: 20px 30px;
+}
+
+.channel-name h1{
+    color: #fff;
+}
+
 .chatbox:nth-child(even){
     background: #2871a2;
     color: #fff;

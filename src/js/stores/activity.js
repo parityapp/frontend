@@ -19,7 +19,8 @@ getAll(){
     return this.activity;
 }
 
-getActivityFromApi(){
+getActivityFromApi(id){
+    console.log(id);
     this.activity = [
         {name: '09:00', uv: 1231},
         {name: '09:30', uv: 2342},

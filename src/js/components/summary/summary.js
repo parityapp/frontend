@@ -15,7 +15,8 @@ export default class Summary extends React.Component{
     componentWillMount(){
         SummaryStore.on('change', () =>{
             this.setState({
-                summary: SummaryStore.getAll()
+                summary: SummaryStore.getAll(),
+
             });
         })
     }
@@ -30,9 +31,12 @@ export default class Summary extends React.Component{
 
         return(
             <div className="summary">
+                <div className="channel-name">
+                    <h1>{this.state.summary.channel}</h1>
+                </div>
                 <div className="container app-container">
                     <h2>Summary</h2>
-                    <p>{this.state.summary.summary}</p>
+                    <p>{this.state.summary.text}</p>
                 </div>
             </div>
         )

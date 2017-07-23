@@ -21,7 +21,7 @@ getAll(){
     return this.topic;
 }
 
-getHottopics(){
+getHottopics(id){
     this.topic = [
        {
    	       text: "new Topic 1."

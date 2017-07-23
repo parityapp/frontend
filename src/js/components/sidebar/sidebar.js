@@ -13,20 +13,28 @@ export default class Sidebar extends React.Component{
         super(props);
         this.state = {
             channels: [
-                "channel1",
-                "channel2",
-                "channel3",
+                {
+                    id: 1,
+                    name: "Channel 1"
+                },
+                {
+                    id: 2,
+                    name: "Channel 2"
+                },{
+                    id: 3,
+                    name: "Channel 3"
+                }
             ]
         }
     }
 
     onClick(event) {
-      console.log("a clicked");
-      ActivityStore.getActivityFromApi();
-      UserStore.getUser();
-      ChatsStore.getMessages();
-      SummaryStore.getSummary();
-      HottopicsStore.getHottopics();
+      var channelid = event.target.dataset.tag;
+      ActivityStore.getActivityFromApi(channelid);
+      UserStore.getUser(channelid);
+      ChatsStore.getMessages(channelid);
+      SummaryStore.getSummary(channelid);
+      HottopicsStore.getHottopics(channelid);
    }
 
     render(){
@@ -38,8 +46,8 @@ export default class Sidebar extends React.Component{
                     </div>
                     <ul>
                     {this.state.channels.map(function(channel, index){
-                    return <li key={channel}>
-                            <a onClick={this.onClick}>{channel}</a>
+                    return <li key={index}>
+                            <a data-tag={channel.id} onClick={this.onClick}>{channel.name}</a>
                            </li>
                     }, this)}
                     </ul>
