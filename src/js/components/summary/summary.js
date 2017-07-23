@@ -8,15 +8,21 @@ export default class Summary extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            summary: SummaryStore.getAll()
+            summary: SummaryStore.getAll(),
+            name: JSON.parse(localStorage.getItem('channels'))[0].name
         }
     }
 
     componentWillMount(){
         SummaryStore.on('change', () =>{
             this.setState({
-                summary: SummaryStore.getAll(),
+                summary: SummaryStore.getAll()
+            });
+        });
 
+        SummaryStore.on('nameChange', () =>{
+            this.setState({
+                name: SummaryStore.getName()
             });
         })
     }
@@ -32,7 +38,7 @@ export default class Summary extends React.Component{
         return(
             <div className="summary">
                 <div className="channel-name">
-                    <h1>{this.state.summary.channel}</h1>
+                    <h1>{this.state.name}</h1>
                 </div>
                 <div className="container app-container">
                     <h2>Summary</h2>
