@@ -5,15 +5,7 @@ class HottopicsStore extends EventEmitter{
 constructor(){
     super();
     this.topic =[
-       {
-   	       text: "Topic 1."
-       },
-       {
-   	       text: "Topic 2."
-       },
-       {
-   	       text: "Topic 3."
-       }
+       "123", "123", "123"
     ]
 }
 
@@ -22,19 +14,18 @@ getAll(){
 }
 
 getHottopics(id){
-    this.topic = [
-       {
-   	       text: "new Topic 1."
-       },
-       {
-   	       text: "new Topic 2."
-       },
-       {
-   	       text: "new Topic 3."
-       }
-    ]
-
-    this.emit("change");
+    console.log("getting user");
+    fetch("https://a093b88f.ngrok.io/stats/hot_topics/" + id, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    }).then(function(response) {
+        return response.json()
+    }).then(function(body) {
+        console.log(body);
+        this.topic = body.data;
+        this.emit("change");
+    }.bind(this));
 }
 
 }

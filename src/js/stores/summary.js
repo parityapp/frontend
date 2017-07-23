@@ -15,7 +15,6 @@ getSummary(id){
     this.summary = {
         text: "a new summary",
     }
-    this.emit("change");
 }
 
 

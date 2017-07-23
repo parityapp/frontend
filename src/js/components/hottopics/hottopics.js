@@ -34,7 +34,7 @@ export default class Hottopics extends React.Component{
                     <h2>Hot Topics</h2>
                     {this.state.topic.map(function(msg, index){
                     return <div key={index} className="chatbox">
-                                <p>{msg.text}</p>
+                                <p>{msg}</p>
                             </div>
                     })}
                 </div>

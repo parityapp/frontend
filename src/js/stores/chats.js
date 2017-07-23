@@ -43,8 +43,19 @@ getMessages(id){
         },
         {
             text: "this is a new message"
-        }
-    ];
+        }];
+        // console.log("Getting chats");
+        // fetch("https://a093b88f.ngrok.io/stats/representative_messages/" + id, {
+        //   headers: {
+        //     'Authorization': 'Bearer ' + localStorage.getItem('token')
+        //   }
+        // }).then(function(response) {
+        //     return response.json()
+        // }).then(function(body) {
+        //     console.log(body);
+        //
+        //     this.emit("change");
+        // }.bind(this));
 
     this.emit("change");
 }
